@@ -2,6 +2,12 @@
 
 This project is a simple e-commerce demo built with [React](https://react.dev/), [Vite](https://vitejs.dev/), and [Tailwind CSS](https://tailwindcss.com/). It features a product catalog, cart sidebar, and a checkout modal, demonstrating modern React patterns and context usage.
 
+
+### Live link
+
+https://qtec-assignment.vercel.app
+
+
 ## Features
 
 - Product listing with categories and details
