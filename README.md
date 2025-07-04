@@ -22,7 +22,7 @@ This project is a simple e-commerce demo built with [React](https://react.dev/),
 
 ### Installation
 
-   git clone https://github.com/AbdurRahmanSikder/Qtec-Assignment
-   cd client
-   npm install
-   npm run dev
+  - git clone https://github.com/AbdurRahmanSikder/Qtec-Assignment
+  - cd client
+  - npm install
+  - npm run dev
