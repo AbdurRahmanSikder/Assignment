@@ -4,6 +4,7 @@ This project is a full-stack e-commerce demo built with **React (Vite)** for the
 
 ---
 ![Banner](client/src/assets/banner.png)
+![Banner](client/src/assets/banner2.png)
 ## Features
 
 - Product listing and details
@@ -55,13 +56,13 @@ npm run server
 
 ----------------------------------------------------
 
-### Frontend Setup
-
-cd client
-npm install
+### 2. Frontend Setup
+  ```sh
+  cd client
+  npm install
 
 ### Configure environment variable: 
-"https://localhost:4000" (backend url)
+VITE_BACKEND_URL="https://localhost:4000" 
 
 ### Run locally
 npm run dev
