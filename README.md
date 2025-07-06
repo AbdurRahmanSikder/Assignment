@@ -1,34 +1,67 @@
-# Qtec Assignment – React + Vite E-commerce Demo
+# Qtec Assignment – E-commerce Demo
 
-This project is a simple e-commerce demo built with [React](https://react.dev/), [Vite](https://vitejs.dev/), and [Tailwind CSS](https://tailwindcss.com/). It features a product catalog, cart sidebar, and a checkout modal, demonstrating modern React patterns and context usage.
+This project is a full-stack e-commerce demo built with **React (Vite)** for the frontend and **Express.js** for the backend. The backend is deployed on **Vercel** and uses **MongoDB** and **Cloudinary** for data and image storage. The frontend is styled with **Tailwind CSS** and supports product browsing, cart management, and a seller dashboard.
 
-
-### Live link
-
-https://qtec-assignment.vercel.app
-
-
+---
+![Banner](client/src/assets/banner.png)
 ## Features
 
-- Product listing with categories and details
+- Product listing and details
 - Add/remove products to/from cart
-- Cart sidebar with order summary and quantity controls
-- Checkout modal with form
-- Responsive design using Tailwind CSS
-- React Router for navigation
-- Toast notifications for cart actions
+- Cart sidebar with order summary
+- Checkout modal
+- Seller dashboard for adding products (with image upload)
+- Responsive UI with Tailwind CSS
+- Toast notifications for user feedback
+- Backend API with Express, MongoDB, and Cloudinary
+- CORS configured for local and deployed environments
 
+---
+
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or newer recommended)
+- [Node.js](https://nodejs.org/) (v18+ recommended)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account
+- [Cloudinary](https://cloudinary.com/) account
 
-### Installation
+---
 
-  - git clone https://github.com/AbdurRahmanSikder/Qtec-Assignment
-  - cd client
-  - npm install
-  - npm run dev
+### 1. Backend Setup
+
+1. **Install dependencies:**
+   ```sh
+   cd server
+   npm install
+# Configure environment variables:
+Create a .env file in the server/ directory:
+
+MONGODB_URL=your_mongodb_connection_string
+PORT=4000
+
+# Cloudinary
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+# Run locally:
+
+npm run server
+
+----------------------------------------------------
+
+### Frontend Setup
+
+cd client
+npm install
+
+### Configure environment variable: 
+"https://localhost:4000" (backend url)
+
+### Run locally
+npm run dev
