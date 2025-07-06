@@ -8,7 +8,7 @@ const Navbar = ({ openCart }) => {
     const { user, getCartCount } = useAppContext();
     
     return (
-        <nav className="bg-red-500 flex flex-wrap items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-primary relative">
+        <nav className="bg-[#000000] flex flex-wrap items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-primary relative">
 
             <div className="flex items-center gap-2 sm:gap-4 w-full lg:w-auto flex-1">
                 <NavLink to="/" onClick={() => setOpen(false)} className="shrink-0">
@@ -18,6 +18,7 @@ const Navbar = ({ openCart }) => {
                         alt="Logo"
                     />
                 </NavLink>
+                <NavLink to='/seller' className="text-gray-200 border px-4 rounded-xl hover:cursor-pointer">seller dashboard</NavLink>
             </div>
 
             <div className="lg:flex items-center gap-8 text-white ml-8">

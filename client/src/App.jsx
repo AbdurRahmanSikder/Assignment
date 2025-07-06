@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar.jsx';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import { Toaster } from 'react-hot-toast';
+import {Toaster} from 'react-hot-toast'
 import AllProduct from './components/AllProduct.jsx';
 import CartSidebar from './pages/CartSidebar.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import { useAppContext } from './context/AppContext.jsx';
 import Checkout from './components/Checkout.jsx';
+import Seller from './pages/Seller.jsx';
 
 const App = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<AllProduct />} />
           <Route path='/products/:category/:id' element={<ProductDetails />} />
+          <Route path='/seller' element={<Seller />} />
         </Routes>
       </div>
     </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import ProductCart from './ProductCart';
-import { products } from '../assets/assets';
-
+import { useAppContext } from '../context/AppContext';
 const AllProduct = () => {
+  const {products} = useAppContext();
+  console.log(products);
   return (
     <div className='mt-16'>
       <div className='text-2xl font-semibold'>All Products</div>

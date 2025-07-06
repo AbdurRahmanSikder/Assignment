@@ -65,20 +65,20 @@ const CartSidebar = ({ isOpen, onClose }) => {
                                                 <img src={product.image[0]} alt={product.name} className="w-full h-full object-cover" />
                                             </div>
                                             <div>
-                                                <p className="font-semibold">{product.name}</p>
+                                                <p className="font-semibold truncate w-40">{product.name}</p>
                                                 <div className="flex items-center gap-2 mt-1">
                                                     <span>Qty:</span>
                                                     <div className="flex items-center border rounded px-2 py-1">
                                                         <button
                                                            onClick={() => setCount(() => removeFromCart(product._id))}
-                                                            className="px-2 text-gray-600 hover:text-black text-lg"
+                                                            className="px-2 hover:cursor-pointer text-gray-600 hover:text-black text-lg"
                                                         >
                                                             −
                                                         </button>
                                                         <span className="px-2">{product.quantity}</span>
                                                         <button
                                                             onClick={() => setCount(addToCart(product._id))}
-                                                            className="px-2 text-gray-600 hover:text-black text-lg"
+                                                            className="px-2  hover:cursor-pointer text-gray-600 hover:text-black text-lg"
                                                         >
                                                             +
                                                         </button>

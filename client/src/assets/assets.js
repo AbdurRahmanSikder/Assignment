@@ -10,12 +10,13 @@ import carrot_image from "./carrot_image.png";
 import apple_image from "./apple_image.png";
 import spinach_image_1 from "./spinach_image_1.png";
 import onion_image_1 from "./onion_image_1.png";
-
+import upload_area from "./upload_area.png";
 
 export const assets = {
   logo,
   remove_icon,
   cart_icon,
+  upload_area
 };
 
 export const products = [

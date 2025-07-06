@@ -1,13 +1,15 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
-import { products as prod } from "../assets/assets";
-
+import {toast} from 'react-hot-toast';
+// import { products as prod } from "../assets/assets";
+import axios from 'axios';
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;
 export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
     const navigate = useNavigate();
     const [cartItems, setCartItems] = useState({});
-    const [products, setProducts] = useState();
+    const [products, setProducts] = useState([]);
     const [showCheckout, setShowCheckout] = useState();
 
     const currency = '৳';
@@ -16,10 +18,20 @@ export const AppContextProvider = ({ children }) => {
 
     const fetchProducts = async () => {
         try {
-            setProducts(prod);
+            const { data } = await axios("/product/list");
+            if (data.success)
+                setProducts(data.products);
+            else
+                console.log(data.message);
         }
         catch (error) {
             toast.error(data.message);
+        }
+    }
+    const fetchCartItems = async () => {
+        const savedCart = localStorage.getItem('cartItems');
+        if (savedCart) {
+            setCartItems(JSON.parse(savedCart));
         }
     }
 
@@ -68,15 +80,33 @@ export const AppContextProvider = ({ children }) => {
         setCartItems(cartData);
 
     }
-
-
+    //update cart item
+    useEffect(() => {
+        const updateCart = async () => {
+            try {
+                console.log("Cart updated, syncing with backend", cartItems);
+                const { data } = await axios.post('/cart/update', { cartItems });
+                console.log(data);
+                if (!data.success) {
+                    toast.error(data.message);
+                }
+                else
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            }
+            catch (error) {
+                toast.error(error.message);
+            }
+        }
+        updateCart();
+    }, [cartItems]);
 
 
     useEffect(() => {
         fetchProducts();
+        fetchCartItems();
     }, [])
 
-    const value = { navigate, products, setProducts, currency, cartItems, addToCart, removeFromCart, getCartAmount, getCartCount,  fetchProducts, setCartItems, showCheckout, setShowCheckout };
+    const value = { navigate, products, setProducts, currency, cartItems, addToCart, removeFromCart, getCartAmount, getCartCount, fetchProducts, setCartItems, showCheckout, setShowCheckout, axios };
     return <AppContext.Provider value={value}>
         {children}
     </AppContext.Provider>
