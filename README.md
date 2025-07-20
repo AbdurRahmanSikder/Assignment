@@ -1,4 +1,4 @@
-# Qtec Assignment – E-commerce Demo
+# Assignment – E-commerce Demo
 
 This project is a full-stack e-commerce demo built with **React (Vite)** for the frontend and **Express.js** for the backend. The backend is deployed on **Vercel** and uses **MongoDB** and **Cloudinary** for data and image storage. The frontend is styled with **Tailwind CSS** and supports product browsing, cart management, and a seller dashboard.
 
